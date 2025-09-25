@@ -1,0 +1,16 @@
+{
+  "name": "echowell",
+  "version": "1.0.0",
+  "description": "EchoWell application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node EchoWell/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
