@@ -1,15 +1,16 @@
 {
   "version": 2,
+  "root": "EchoWell",
   "builds": [
     {
-      "src": "EchoWell/server.js",
+      "src": "server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "EchoWell/server.js"
+      "dest": "server.js"
     }
   ]
 }
