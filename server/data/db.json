@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": "31901e50-3d59-4d54-b966-5a27f3b4d3df",
+      "name": "Yashas Shetty",
+      "email": "shettyyyashas@gmail.com",
+      "passwordHash": "d102de553a45bf7bc60c1f581b8ec5a5:4f4459a1691ea4aecae8f19c09178404809b77ba6b50b9f2f2267880f588ad0b",
+      "dob": "2005-01-09",
+      "age": 18,
+      "college": "rait",
+      "issues": [
+        "Anxiety",
+        "Sleep Issues",
+        "Academic Pressure"
+      ],
+      "about": "",
+      "createdAt": "2026-03-15T12:22:43.043Z",
+      "updatedAt": "2026-03-15T12:22:43.043Z"
+    }
+  ],
+  "moods": [],
+  "chats": [
+    {
+      "id": "aef0e1f0-bd3f-487f-96d2-5ae2c80c72b6",
+      "userId": "31901e50-3d59-4d54-b966-5a27f3b4d3df",
+      "role": "user",
+      "content": "little streesfull",
+      "createdAt": "2026-03-15T12:23:01.541Z"
+    },
+    {
+      "id": "d485ed4a-8b83-48e8-a806-73198684102c",
+      "userId": "31901e50-3d59-4d54-b966-5a27f3b4d3df",
+      "role": "assistant",
+      "content": "Thanks for sharing. I am here with you. A helpful reset is 60 seconds of slow breathing, then writing one thing you can control in the next hour. Want to do that together?",
+      "source": "fallback",
+      "createdAt": "2026-03-15T12:23:01.777Z"
+    },
+    {
+      "id": "5ad98647-fbb6-4ee3-8328-2a07dd6c04f7",
+      "userId": "31901e50-3d59-4d54-b966-5a27f3b4d3df",
+      "role": "user",
+      "content": "yes",
+      "createdAt": "2026-03-15T12:23:09.633Z"
+    },
+    {
+      "id": "b0a04cd1-0b05-4eea-a475-fec3ed51b2e3",
+      "userId": "31901e50-3d59-4d54-b966-5a27f3b4d3df",
+      "role": "assistant",
+      "content": "Thanks for sharing. I am here with you. A helpful reset is 60 seconds of slow breathing, then writing one thing you can control in the next hour. Want to do that together?",
+      "source": "fallback",
+      "createdAt": "2026-03-15T12:23:09.765Z"
+    }
+  ]
+}

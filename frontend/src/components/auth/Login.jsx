@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+﻿import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import api from "../../lib/api";
+import { setToken } from "../../lib/auth";
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -47,13 +50,12 @@ const Login = () => {
         
         setIsLoading(true);
         try {
-            const res = await axios.post('/api/auth/login', formData);
-            console.log(res.data);
-            localStorage.setItem('token', res.data.token);
-            // Redirect to dashboard or show success message
+            const res = await api.post('/auth/login', formData);
+            setToken(res.data.access_token);
+            const nextPath = location.state?.from || "/dashboard";
+            navigate(nextPath, { replace: true });
         } catch (err) {
-            console.error(err.response?.data);
-            setErrors({ general: err.response?.data?.message || 'Login failed' });
+            setErrors({ general: err.response?.data?.detail || 'Login failed' });
         } finally {
             setIsLoading(false);
         }
@@ -160,7 +162,7 @@ const Login = () => {
                                     Remember me
                                 </label>
                             </div>
-                            <Link to="/forgot-password" className="body-sm text-cyan-600 hover:text-cyan-500 transition-colors duration-200">
+                            <Link to="/login" className="body-sm text-cyan-600 hover:text-cyan-500 transition-colors duration-200">
                                 Forgot password?
                             </Link>
                         </div>

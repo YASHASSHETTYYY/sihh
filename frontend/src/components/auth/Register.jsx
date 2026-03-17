@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+﻿import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import api from "../../lib/api";
+import { setToken } from "../../lib/auth";
 
 const Register = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -91,15 +93,14 @@ const Register = () => {
         
         setIsLoading(true);
         try {
-            const res = await axios.post('/api/auth/register', {
+            const res = await api.post('/auth/register', {
                 ...formData,
                 issues: issues
             });
-            console.log(res.data);
-            // Redirect to login or dashboard
+            setToken(res.data.access_token);
+            navigate("/dashboard", { replace: true });
         } catch (err) {
-            console.error(err.response?.data);
-            setErrors({ general: err.response?.data?.message || 'Registration failed' });
+            setErrors({ general: err.response?.data?.detail || 'Registration failed' });
         } finally {
             setIsLoading(false);
         }
